@@ -1,3 +1,10 @@
+source app/error.sh
+
 function strlen(){
-    echo "this string" | grep -oP . | grep -c .
+    local prt=$@;
+    local count=${#prt};
+
+    [[ count -le 6 ]] && err "String not found.";
+    
+    echo $(($count - 7));
 }
