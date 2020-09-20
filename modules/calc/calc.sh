@@ -5,9 +5,8 @@ source app/util.sh
 source app/error.sh
 
 function calc(){
-    
-    int $1 && err "First argument must be INT";
-    int $2 && err "Second argument must be INT";
+    int $2 && err "First argument must be INT";
+    int $3 && err "Second argument must be INT";
     
     case "$1" in
         sum)
