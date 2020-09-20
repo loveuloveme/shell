@@ -16,12 +16,12 @@ case "$1" in
 		calc $2 $3 $4;
 		;;
 	search)
-		#[[ $# -ne 3 ]] && err "2 parameters expected";
+		[[ $# -ne 3 ]] && err "2 parameters expected";
 		search $2 $3;
 		;;
 	reverse)
 		[[ $# -ne 3 ]] && err "2 parameters expected"
-		reverse $2 $3
+		reverse $2 $3;
 		;;
 	strlen)
 		strlen $@;
@@ -30,8 +30,8 @@ case "$1" in
 		log
 		;;
 	exit)
-	       	[[ $# -ne 2 ]] && err "1 parameters expected"
-       		exit_ $2;
+	    [[ $# -ne 2 ]] && err "1 parameters expected"
+       	exit_ $2;
 		;;
 	help)
 		;;
