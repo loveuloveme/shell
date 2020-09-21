@@ -26,25 +26,25 @@ function menu(){
 function menu_case(){
     case "$1" in
         calc | c)
-            [ -f "modules/calc/calc.sh" ] && calc_;
+            [ -f "modules/calc/calc.sh" ] && source modules/calc/calc.sh && calc_;
             ;;
         search | s)
-            [ -f "modules/search/search.sh" ] && search_
+            [ -f "modules/search/search.sh" ] && source modules/search/search.sh && search_
             ;;
         strlen | st)
-            [ -f "modules/strlen/strlen.sh" ] && strlen_
+            [ -f "modules/strlen/strlen.sh" ] && source modules/strlen/strlen.sh && strlen_
             ;;
         log | l)
-            [ -f "modules/log/log.sh" ] && log_
+            [ -f "modules/log/log.sh" ] && source modules/log/log.sh && log_
             ;;
         exit | e)
-            [ -f "modules/exit/exit.sh" ] && exit__
+            [ -f "modules/exit/exit.sh" ] && source modules/exit/exit.sh && exit__
             ;;
         help | h)
-            [ -f "modules/help/help.sh" ] && help
+            [ -f "modules/help/help.sh" ] && source modules/help/help.sh && help
             ;;
         *)
-            err "Command not found";
+            err "Command not found" 1;
             ;;
     esac
     menu;

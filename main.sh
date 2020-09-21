@@ -5,7 +5,7 @@
 function app_corrupted(){
     >&2 echo "Error: app is corrupted";
 
-    exit 1;
+    exit 11;
 }
 
 [ -f "app/error.sh" ] || app_corrupted;
