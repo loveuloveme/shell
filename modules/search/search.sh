@@ -5,7 +5,7 @@ source app/error.sh
 
 function search(){
 
-    regex="$2";
+    local regex="$2";
 
     for i in $(ls $1);
     do

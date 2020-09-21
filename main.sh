@@ -1,34 +1,17 @@
 #!/bin/bash
 
+
+#Определение целостности приложения
 function app_corrupted(){
     >&2 echo "Error: app is corrupted";
 
     exit 1;
 }
 
-[ -f "modules/calc/calc.sh" ] || app_corrupted;
-[ -f "modules/reverse/reverse.sh" ] || app_corrupted;
-[ -f "modules/strlen/strlen.sh" ] || app_corrupted;
-[ -f "modules/search/search.sh" ] || app_corrupted;
-[ -f "modules/exit/exit.sh" ] || app_corrupted;
-[ -f "modules/log/log.sh" ] || app_corrupted;
-[ -f "modules/interactive/interactive.sh" ] || app_corrupted;
-[ -f "modules/interactive/calc.sh" ] || app_corrupted;
-[ -f "modules/interactive/exit.sh" ] || app_corrupted;
-[ -f "modules/interactive/search.sh" ] || app_corrupted;
-[ -f "modules/interactive/strlen.sh" ] || app_corrupted;
 [ -f "app/error.sh" ] || app_corrupted;
 [ -f "app/util.sh" ] || app_corrupted;
 
 interact=0;
-
-source modules/calc/calc.sh
-source modules/reverse/reverse.sh
-source modules/strlen/strlen.sh
-source modules/search/search.sh
-source modules/exit/exit.sh
-source modules/log/log.sh
-source modules/help/help.sh
 
 source modules/interactive/interactive.sh
 
@@ -37,35 +20,53 @@ source app/util.sh
 
 case "$1" in
 	calc)
+        [ -f "modules/calc/calc.sh" ] || app_corrupted;
+        source modules/calc/calc.sh
 		[[ $# -ne 4 ]] && err "3 parameters expected";
 		calc $2 $3 $4;
 		;;
 	search)
+        [ -f "modules/search/search.sh" ] || app_corrupted;
+        source modules/search/search.sh
 		[[ $# -ne 3 ]] && err "2 parameters expected";
 		search $2 $3;
 		;;
 	reverse)
+        [ -f "modules/reverse/reverse.sh" ] || app_corrupted;
+        source modules/reverse/reverse.sh
 		[[ $# -ne 3 ]] && err "2 parameters expected"
 		reverse $2 $3;
 		;;
 	strlen)
+        [ -f "modules/strlen/strlen.sh" ] || app_corrupted;
+        source modules/strlen/strlen.sh
 		strlen ${@:2};
 		;;
 	log)
+        [ -f "modules/log/log.sh" ] || app_corrupted;
+        source modules/log/log.sh
 		log
 		;;
 	exit)
+        [ -f "modules/exit/exit.sh" ] || app_corrupted;
+        source modules/exit/exit.sh
 	    [[ $# -ne 2 ]] && err "1 parameters expected"
        	exit_ $2;
 		;;
 	help)
+        [ -f "modules/help/help.sh" ] || app_corrupted;
+        source modules/help/help.sh
         help
 		;;
     interactive)
+        [ -f "modules/interactive/interactive.sh" ] || app_corrupted;
+        [ -f "modules/interactive/calc.sh" ] || app_corrupted;
+        [ -f "modules/interactive/exit.sh" ] || app_corrupted;
+        [ -f "modules/interactive/search.sh" ] || app_corrupted;
+        [ -f "modules/interactive/strlen.sh" ] || app_corrupted;
         interact=1;
         interactive
 		;;
 	*)
-		err "Command not found"
-		exit 1	
+		err "Command not found" 1
 esac

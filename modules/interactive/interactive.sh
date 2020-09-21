@@ -8,12 +8,13 @@ source modules/interactive/exit.sh
 
 function menu(){
     echo -e "\033[1;34m Menu: \033[0m";
-    echo "* c\calc";
-    echo "* s\search";
-    echo "* st\strlen";
-    echo "* l\log";
-    echo "* e\exit";
-    echo "* h\help";
+
+    [ -f "modules/calc/calc.sh" ] && echo "* c\calc";
+    [ -f "modules/search/search.sh" ] && echo "* s\search";
+    [ -f "modules/strlen/strlen.sh" ] && echo "* st\strlen";
+    [ -f "modules/log/log.sh" ] && echo "* l\log";
+    [ -f "modules/exit/exit.sh" ] && echo "* e\exit";
+    [ -f "modules/help/help.sh" ] && echo "* h\help";
 
     printf "INPUT: "
 
@@ -25,22 +26,22 @@ function menu(){
 function menu_case(){
     case "$1" in
         calc | c)
-            calc_;
+            [ -f "modules/calc/calc.sh" ] && calc_;
             ;;
         search | s)
-            search_
+            [ -f "modules/search/search.sh" ] && search_
             ;;
         strlen | st)
-            strlen_
+            [ -f "modules/strlen/strlen.sh" ] && strlen_
             ;;
         log | l)
-            log_
+            [ -f "modules/log/log.sh" ] && log_
             ;;
         exit | e)
-            exit__
+            [ -f "modules/exit/exit.sh" ] && exit__
             ;;
         help | h)
-            help
+            [ -f "modules/help/help.sh" ] && help
             ;;
         *)
             err "Command not found";

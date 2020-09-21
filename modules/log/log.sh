@@ -1,15 +1,5 @@
 #!/bin/bash
 
-function warning(){
-	echo keke;	
-}
-
-function information(){
-	echo hehe;
-
-	grep "(II)" $1;
-}
-
 function log(){
 	local YELLOW="\033[1;33m"
 	local BLUE="\033[1;34m"

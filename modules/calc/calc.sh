@@ -20,6 +20,6 @@ function calc(){
             div $2 $3;
             ;;
         *)
-            echo "Action not found"
+            echo "Action not found" 1
     esac
 }
