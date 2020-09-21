@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function err(){
-    echo "Error: $1";
-    exit 1;
+    >&2 echo "Error: $1";
+
+    [[ $interact -eq 0 ]] && exit 1;
 }

@@ -1,8 +1,6 @@
 #!/bin/bash
 
 source modules/calc/arithmetic.sh
-source app/util.sh
-source app/error.sh
 
 function calc(){
     int $2 && err "First argument must be INT";
@@ -22,7 +20,6 @@ function calc(){
             div $2 $3;
             ;;
         *)
-            echo "WWWWWWRRRRROONG"
-            exit 1	
+            echo "Action not found"
     esac
 }

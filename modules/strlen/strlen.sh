@@ -1,10 +1,8 @@
-source app/error.sh
+#!/bin/bash
 
 function strlen(){
     local prt=$@;
     local count=${#prt};
 
-    [[ count -le 6 ]] && err "String not found.";
-    
-    echo $(($count - 7));
+    echo $(($count));
 }

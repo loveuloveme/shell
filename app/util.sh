@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function int(){
     [[ "$1" =~ (^-?([1-9][0-9]*|0)$) ]] && return 1 || return 0;
 }
