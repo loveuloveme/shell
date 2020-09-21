@@ -7,7 +7,7 @@ function int(){
 
 #Проверка существования файла
 function file_exist(){
-    [ -f "$1" ] && return 1 || return 0;
+    [ -f "$1" ] && [ -r "$1" ] && return 1 || return 0;
 }
 
 #Проверка существования директории
