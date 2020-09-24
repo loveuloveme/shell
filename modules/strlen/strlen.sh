@@ -1,8 +1,5 @@
 #!/bin/bash
 
 function strlen(){
-    local prt=$@;
-    local count=${#prt};
-
-    echo $count;
+    echo expr length "$1";
 }

@@ -18,6 +18,8 @@ source modules/interactive/interactive.sh
 source app/error.sh
 source app/util.sh
 
+[[ $# -eq 0 ]] && err "No arguments";
+
 case "$1" in
 	calc)
         [ -f "modules/calc/calc.sh" ] || app_corrupted;
@@ -39,6 +41,7 @@ case "$1" in
 		;;
 	strlen)
         [ -f "modules/strlen/strlen.sh" ] || app_corrupted;
+        [[ $# -ne 2 ]] && err "1 parameters expected"
         source modules/strlen/strlen.sh
 		strlen ${@:2};
 		;;
@@ -50,7 +53,6 @@ case "$1" in
 	exit)
         [ -f "modules/exit/exit.sh" ] || app_corrupted;
         source modules/exit/exit.sh
-	    [[ $# -ne 2 ]] && err "1 parameters expected"
        	exit_ $2;
 		;;
 	help)

@@ -11,6 +11,6 @@ function search(){
     do
         ! dir_exist $1${i} && search $1${i}/ $2
 
-        ! file_exist $1${i} && grep "$regex" $1${i};
+        ! file_exist $1${i} && ! file_readble $1${i} && grep "$regex" $1${i};
     done
 }

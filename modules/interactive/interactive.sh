@@ -8,17 +8,17 @@ source modules/interactive/exit.sh
 source modules/interactive/reverse.sh
 
 function menu(){
-    echo -e "\033[1;34m Menu: \033[0m";
+    echo -e "\033[1;34m\nMenu:\033[0m";
 
-    [ -f "modules/calc/calc.sh" ] && [ -f "modules/interactive/calc.sh" ] && echo "* c\calc";
-    [ -f "modules/search/search.sh" ] && [ -f "modules/interactive/search.sh" ] && echo "* s\search";
-    [ -f "modules/strlen/strlen.sh" ] && [ -f "modules/interactive/strlen.sh" ] && echo "* st\strlen";
-    [ -f "modules/reverse/reverse.sh" ] && [ -f "modules/interactive/reverse.sh" ] && echo "* r\reverse";
-    [ -f "modules/log/log.sh" ] && [ -f "modules/interactive/log.sh" ] && echo "* l\log";
-    [ -f "modules/exit/exit.sh" ] && [ -f "modules/interactive/exit.sh" ] && echo "* e\exit";
-    [ -f "modules/help/help.sh" ] && [ -f "modules/interactive/help.sh" ] && echo "* h\help";
+    [ -f "modules/calc/calc.sh" ] && [ -f "modules/interactive/calc.sh" ] && echo "* calc";
+    [ -f "modules/search/search.sh" ] && [ -f "modules/interactive/search.sh" ] && echo "* search";
+    [ -f "modules/strlen/strlen.sh" ] && [ -f "modules/interactive/strlen.sh" ] && echo "* strlen";
+    [ -f "modules/reverse/reverse.sh" ] && [ -f "modules/interactive/reverse.sh" ] && echo "* reverse";
+    [ -f "modules/log/log.sh" ] && [ -f "modules/interactive/log.sh" ] && echo "* log";
+    [ -f "modules/exit/exit.sh" ] && [ -f "modules/interactive/exit.sh" ] && echo "* exit";
+    [ -f "modules/help/help.sh" ] && [ -f "modules/interactive/help.sh" ] && echo "* help";
 
-    printf "INPUT: "
+    printf "\033[1mCOMMAND: \033[0m"
 
     read action;
 

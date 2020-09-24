@@ -13,6 +13,6 @@ function mul(){
 }
 
 function div(){
-    [[ $2 -eq 0 ]] && err "Деление на 0" 13
+    [[ $2 -eq 0 ]] && err "Divide by zero" 13 && return;
     echo $(($1/$2));
 }
