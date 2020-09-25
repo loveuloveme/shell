@@ -4,9 +4,9 @@ source app/util.sh
 source app/error.sh
 
 function search(){
-    [[ -z "$1" ]] && err "Path required" && return;
-    [[ -z "$2" ]] && err "Regex required" && return;
-    dir_exist $1 && err "Dir doesn't exist" && return;
+    [[ -z "$1" ]] && err "Path required" 16 && return;
+    [[ -z "$2" ]] && err "Regex required" 16 && return;
+    dir_exist $1 && err "Dir doesn't exist" 16 && return;
 
     local regex="$2";
 
