@@ -1,5 +1,5 @@
 #!/bin/bash
 
 function strlen(){
-    echo expr length "$1";
+    expr length "$1";
 }
