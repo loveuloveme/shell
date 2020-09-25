@@ -43,7 +43,7 @@ case "$1" in
         [ -f "modules/strlen/strlen.sh" ] || app_corrupted;
         [[ $# -ne 2 ]] && err "1 parameters expected"
         source modules/strlen/strlen.sh
-		strlen "${2}";
+		strlen "$2";
 		;;
 	log)
         [ -f "modules/log/log.sh" ] || app_corrupted;

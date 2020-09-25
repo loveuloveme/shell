@@ -5,5 +5,5 @@ function strlen_(){
     printf  "\033[1;34mString: \033[0m";
     read str;
 
-    strlen $str;
+    strlen "$str";
 }
