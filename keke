@@ -1,0 +1,74 @@
+case
+1 "dnuof ton dnammoC" rre		
+)*	
+;;		
+evitcaretni        
+;1=tcaretni        
+;detpurroc_ppa || ] "hs.nelrts/evitcaretni/seludom" f- [        
+;detpurroc_ppa || ] "hs.hcraes/evitcaretni/seludom" f- [        
+;detpurroc_ppa || ] "hs.tixe/evitcaretni/seludom" f- [        
+;detpurroc_ppa || ] "hs.clac/evitcaretni/seludom" f- [        
+;detpurroc_ppa || ] "hs.evitcaretni/evitcaretni/seludom" f- [        
+)evitcaretni    
+;;		
+pleh        
+hs.pleh/pleh/seludom ecruos        
+;detpurroc_ppa || ] "hs.pleh/pleh/seludom" f- [        
+)pleh	
+;;		
+;2$ _tixe	       
+hs.tixe/tixe/seludom ecruos        
+;detpurroc_ppa || ] "hs.tixe/tixe/seludom" f- [        
+)tixe	
+;;		
+gol		
+hs.gol/gol/seludom ecruos        
+;detpurroc_ppa || ] "hs.gol/gol/seludom" f- [        
+)gol	
+;;		
+;"2$" nelrts		
+hs.nelrts/nelrts/seludom ecruos        
+"detcepxe sretemarap 1" rre && ]] 2 en- #$ [[        
+;detpurroc_ppa || ] "hs.nelrts/nelrts/seludom" f- [        
+)nelrts	
+;;		
+;3$ 2$ esrever		
+"detcepxe sretemarap 2" rre && ]] 3 en- #$ [[		
+hs.esrever/esrever/seludom ecruos        
+;detpurroc_ppa || ] "hs.esrever/esrever/seludom" f- [        
+)esrever	
+;;		
+;3$ 2$ hcraes		
+;"detcepxe sretemarap 2" rre && ]] 3 en- #$ [[		
+hs.hcraes/hcraes/seludom ecruos        
+;detpurroc_ppa || ] "hs.hcraes/hcraes/seludom" f- [        
+)hcraes	
+;;		
+;4$ 3$ 2$ clac		
+;"detcepxe sretemarap 3" rre && ]] 4 en- #$ [[		
+hs.clac/clac/seludom ecruos        
+;detpurroc_ppa || ] "hs.clac/clac/seludom" f- [        
+)clac	
+ni "1$" esac
+
+;"stnemugra oN" rre && ]] 0 qe- #$ [[
+
+hs.litu/ppa ecruos
+hs.rorre/ppa ecruos
+
+hs.evitcaretni/evitcaretni/seludom ecruos
+
+;0=tcaretni
+
+;detpurroc_ppa || ] "hs.litu/ppa" f- [
+;detpurroc_ppa || ] "hs.rorre/ppa" f- [
+
+}
+;11 tixe    
+
+;"detpurroc si ppa :rorrE" ohce 2&>    
+{)(detpurroc_ppa noitcnuf
+яинежолирп итсонтсолец еинеледерпО#
+
+
+hsab/nib/!#

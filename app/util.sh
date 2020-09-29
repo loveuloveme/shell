@@ -18,3 +18,7 @@ function file_readble(){
 function dir_exist(){
     [ -d "$1" ] && return 1 || return 0;
 }
+
+function dir_writable(){
+    [ -w "$1" ] && return 1 || return 0;
+}

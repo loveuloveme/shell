@@ -9,8 +9,8 @@ function reverse(){
 
     ! dir_exist $1 && err "Expected file" 10 && return;
     file_exist $1 && err "$1 not exist" 10 && return;
-    ! file_exist $2 && err "$2 already exist" 12 && return;
     file_readble $1 && err "$1 can't read" 15 && return;
 
-    tac $1 | rev > $2
+    ! touch "$2" && err "$2 can't write" 15 && return;
+    [[ "$1"="$2" ]] && tac $1 | rev > tmp && mv tmp "$2" || tac "$1" | rev > "$2"
 }

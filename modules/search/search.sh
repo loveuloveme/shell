@@ -12,9 +12,8 @@ function search(){
 
     for i in $(ls $1);
     do
-        ! dir_exist $1/${i}/ && ! file_readble $1/${i}/ && search $1/${i}/ $2
+        ! dir_exist $1/${i}/ && ! file_readble $1/${i}/ && search $1/${i}/ $2 && continue;
 
 	! file_exist $1/${i} && ! file_readble $1/${i} && grep "$regex" $1/${i};
-	 #| sed -E "/$regex/s//$(echo -e "\033[1;31m$regex\033[0m")/";
     done
 }
