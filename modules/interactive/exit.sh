@@ -6,5 +6,5 @@ function exit__(){
 
     read code;
 
-    exit $code;
+    exit_ $code;
 }

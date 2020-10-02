@@ -7,7 +7,7 @@ function log(){
     
     file_exist "/var/log/anaconda/X.log" && err "Log file not found" 10 && return;
 
-    cat /var/log/anaconda/X.log | grep "^\[" | grep "(II)" | sed -E "/\(II\)/s//$(printf "$BLUE(Information)$RESET")/";
-    cat /var/log/anaconda/X.log | grep "^\[" | grep "(II)" | sed -E "/\(II\)/s//$(printf "$BLUE(Information)$RESET")/";cat /var/log/anaconda/X.log | grep "^\[" | grep "(II)" | sed -E "/\(II\)/s//$(printf "$YELLOW(Warning)$RESET")/";
+    cat /var/log/anaconda/X.log | grep "^\[" | grep "(WW)" | sed -E "/\(WW\)/s//$(printf "$YELLOW Warning $RESET")/";
+    cat /var/log/anaconda/X.log | grep "^\[" | grep "(II)" | sed -E "/\(II\)/s//$(printf "$BLUE Information $RESET")/";
 
 }

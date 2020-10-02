@@ -14,5 +14,6 @@ function reverse(){
     ! file_exist $2 && dir_writable $2 && err "$2 can't write" 10 && return;
 
     ! touch "$2" 2> /dev/null && err "$2 can't write" 15 && return;
-    [[ "$1"="$2" ]] && tac $1 | rev > tmp && mv tmp "$2" || tac "$1" | rev > "$2"
+   # [[ "$1"="$2" ]] && tac $1 | rev > tmp && mv tmp "$2" || tac "$1" | rev > "$2"
+     [[ "$1"="$2" ]] && tac $1 | tee "$2"  > /dev/null || tac "$1" >> "$2";
 }

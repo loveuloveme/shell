@@ -1,0 +1,74 @@
+esac
+		err "Command not found" 1
+	*)
+		;;
+        interactive
+        interact=1;
+        [ -f "modules/interactive/strlen.sh" ] || app_corrupted;
+        [ -f "modules/interactive/search.sh" ] || app_corrupted;
+        [ -f "modules/interactive/exit.sh" ] || app_corrupted;
+        [ -f "modules/interactive/calc.sh" ] || app_corrupted;
+        [ -f "modules/interactive/interactive.sh" ] || app_corrupted;
+    interactive)
+		;;
+        help
+        source modules/help/help.sh
+        [ -f "modules/help/help.sh" ] || app_corrupted;
+	help)
+		;;
+       	exit_ $2;
+        source modules/exit/exit.sh
+        [ -f "modules/exit/exit.sh" ] || app_corrupted;
+	exit)
+		;;
+		log
+        source modules/log/log.sh
+        [ -f "modules/log/log.sh" ] || app_corrupted;
+	log)
+		;;
+		strlen "$2";
+        source modules/strlen/strlen.sh
+        [[ $# -ne 2 ]] && err "1 parameters expected"
+        [ -f "modules/strlen/strlen.sh" ] || app_corrupted;
+	strlen)
+		;;
+		reverse $2 $3;
+		[[ $# -ne 3 ]] && err "2 parameters expected"
+        source modules/reverse/reverse.sh
+        [ -f "modules/reverse/reverse.sh" ] || app_corrupted;
+	reverse)
+		;;
+		search $2 $3;
+		[[ $# -ne 3 ]] && err "2 parameters expected";
+        source modules/search/search.sh
+        [ -f "modules/search/search.sh" ] || app_corrupted;
+	search)
+		;;
+		calc $2 $3 $4;
+		[[ $# -ne 4 ]] && err "3 parameters expected";
+        source modules/calc/calc.sh
+        [ -f "modules/calc/calc.sh" ] || app_corrupted;
+	calc)
+case "$1" in
+
+[[ $# -eq 0 ]] && err "No arguments";
+
+source app/util.sh
+source app/error.sh
+
+source modules/interactive/interactive.sh
+
+interact=0;
+
+[ -f "app/util.sh" ] || app_corrupted;
+[ -f "app/error.sh" ] || app_corrupted;
+
+}
+    exit 11;
+
+    >&2 echo "Error: app is corrupted";
+function app_corrupted(){
+#Определение целостности приложения
+
+
+#!/bin/bash
